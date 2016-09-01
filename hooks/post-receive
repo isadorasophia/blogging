@@ -1,0 +1,13 @@
+#!/bin/bash
+
+GIT_REPO=$HOME/work/src/blogging
+WORKING_DIRECTORY=$HOME/work/src/website
+PUBLIC_WWW=$HOME/public_html
+BACKUP_WWW=$HOME/backup_html
+MY_DOMAIN=isadorasophia.com
+
+set -e
+
+$HOME/work/bin/hugo -s $WORKING_DIRECTORY -d $PUBLIC_WWW -b "http://${MY_DOMAIN}"
+
+trap - EXIT
