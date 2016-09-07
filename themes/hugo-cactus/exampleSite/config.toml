@@ -1,21 +1,19 @@
 # Site settings
-baseurl = "http://isadorasophia.com/"
+baseurl = "http://replace-this-with-your-domain.com/"
 languageCode = "en-us"
-title = "Isadora Sophia"
+title = "Hugo Cactus Theme"
 theme = "hugo-cactus-theme"
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 # Disable comments by leaving disqusShortname empty
 disqusShortname = "spf13"
 
-enableEmoji = true
-
 [params]
-	name = "Isadora Sophia"
-	description = "A short description about what I do and who I am."
-	bio = "Programmer - Researcher - Dreamer"
+	name = "John Doe"
+	description = "Describe your website"
+	bio = "Blogger - Programmer - Gopher"
 	# Enter optionally your twitter account
-	twitter = "isadorasophia"
+	twitter = "Your Twitter account"
 	enableRSS = true
 
 	# Add custom assets with their paths relative to the static folder
@@ -27,7 +25,7 @@ enableEmoji = true
 
 	# Navigation links
 	home = ""
-	about = "About"
+	about = ""
 	subscribe = ""
 	# Pagination links
 	olderPosts = ""
@@ -35,12 +33,12 @@ enableEmoji = true
 	readMore = ""
 	copyright = ""
 	# Sharing options and author information in posts
-	aboutAuthor = "I like designing new worlds."
+	aboutAuthor = "I'm an enthusiastic gopher."
 	tweet = ""
 	share = ""
 	# 404 page
-	title404 = "Page doesn't exist!"
-	subtitle404 = "Sorry :("
+	title404 = ""
+	subtitle404 = ""
 
 	# Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
 	iconFont = "mono-social"
@@ -49,7 +47,7 @@ enableEmoji = true
 
 # Add additional social link entries underneath
 [social]
-    twitter  = "https://twitter.com/isadorasophia"
-    github   = "https://github.com/isadorasophia"
-    linkedin = "https://www.linkedin.com/in/isadora-sophia-488726107"
-    email    = "mailto:isadorasophiagr@gmail.com"
+    twitter  = "https://www.twitter.com/"
+    facebook = "https://www.facebook.com/"
+    github   = "https://www.github.com/"
+    dribble  = "https://www.dribbble.com/"
