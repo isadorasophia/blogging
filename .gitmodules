@@ -1,0 +1,4 @@
+[submodule "theme"]
+    path = themes/hugo-cactus-theme/
+    ignore = dirty
+
