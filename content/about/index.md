@@ -1,4 +1,4 @@
-An undergraduate student in Computer Science at UNICAMP who dreams too much and tries to do everything in so little time. I :heart: my area!
+An undergraduate student in Computer Science at UNICAMP who dreams too much and tries to do everything in so little time. I <img src="/img/heart2.png" alt="Drawing" style="width: 16px;"/> my area!
 
 I'm researching about deep learning, currently working with both computer vision and reinforcement learning. I also like to develop games in my free time.
 

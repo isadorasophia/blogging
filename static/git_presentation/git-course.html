@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introdução a Git</title>
+
+		<meta name="description" content="Apresentação introdutório para o uso de Git">
+		<meta name="author" content="Isadora Sophia">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black-lilac.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<img width="250" height="250" style="background:none; border:none; box-shadow:none;" src=https://git-scm.com/images/logos/downloads/Git-Icon-White.png>
+					<h1>Git</h1>
+					<h3>Noções básicas de versionamento</h3>
+					<p>
+						<small>Created by Isadora Sophia</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Créditos :D</h2>
+					<p>
+						Apresentação criada com <a href=https://github.com/hakimel/reveal.js>reveal.js</a>.
+						<br>
+						Referências: <a href=http://gitolite.com/gcs.html>git concepts simplified</a>, <a href=http://6.470.scripts.mit.edu/2011/lectures/git/html/all.html>version control with git and github</a> e <a href=http://gitref.org/>git reference</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>...Git?</h2>
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<p>
+										<section style="text-align: left;">
+											<ul>
+												<li>Desenvolvido em 2005, pela comunidade do Linux</li>
+												<li>Sistema de versionamento distribuído</li>
+												<li>Mantém a data em um diretório <b>.git</b>, em 
+													seu repositório</li>
+											</ul>
+										</section>
+									</p>
+								</td>
+								<td>
+									<p>
+										<img style="align: right; border-color:#333; vertical-align:middle;" src="http://gugod.org/2009/12/12/3389620_29acb2fe86d3e03e7f8c665c4225c454.jpg">
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>Commit</h2>
+					<p>
+						Um commit guarda informações como o seu parent commit, comentário e o autor (nome/email). Como todo objeto em Git, cada commit é identificado por um SHA.
+					</p>
+					<p>
+						<table border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<td colspan="3">
+										<p>
+											<section style="text-align: left;">
+												Exemplo de um SHA: <code>a30236028b7ddd65f01321af42f904479eaff549</code>
+											</section>
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<img style="vertical-align:middle; border-color:#333;" src=http://6.470.scripts.mit.edu/2011/lectures/git/html/images/object-blob.png>
+									</td>
+									<td>
+										<img style="vertical-align:middle; border-color:#333;" src=http://6.470.scripts.mit.edu/2011/lectures/git/html/images/object-tree.png>
+									</td>
+									<td>
+										<img style="vertical-align:middle; border-color:#333;" src=http://6.470.scripts.mit.edu/2011/lectures/git/html/images/object-commit.png>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						Exemplo de uma branch simples
+						<p>
+						<small>Repositórios são grafos de commits.</small>
+						</p>
+							<img style="vertical-align:middle; border-color:#333;" src=http://6.470.scripts.mit.edu/2011/lectures/git/html/images/commits_trees.png>
+						<p>
+							<img style="vertical-align:middle; border-color:#333;" src=http://6.470.scripts.mit.edu/2011/lectures/git/html/images/commits_trees_branches.png>
+						</p>
+					</section>
+
+					<section>
+						Exemplo com mais de uma branch
+						<p>
+							<small><b>HEAD</b> é a referência a sua branch atual.</small>
+						</p>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<section style="text-align: center; vertical-align:middle">
+											<code style="font-size: 17px;">
+												git checkout -b feature_X
+												<br>
+												git checkout master
+											</code>
+										</section>
+									</td>
+									<td>
+										<p>
+											<img style="vertical-align:middle; border-color:#333;" src="http://i286.photobucket.com/albums/ll104/SophiaRodopoulos/Screen%20Shot%202015-06-10%20at%201.08.02%20AM.png">
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						Commit com mais de um parent
+						<p>
+							<small>Suponha que sua branch atual seja <b>master</b>.</small>
+						</p>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<section style="text-align: center; vertical-align:middle">
+											<code style="font-size: 17px;">
+												git merge feature_X
+											</code>
+										</section>
+									</td>
+									<td>
+										<p>
+											<img style="vertical-align:middle; border-color:#333;" src="http://i286.photobucket.com/albums/ll104/SophiaRodopoulos/Screen%20Shot%202015-06-10%20at%201.24.23%20AM.png">
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<h2>GIT Url</h2>
+					<p>
+						Um repositório Git pode ser acessado de várias formas.
+					</p>
+					<p>
+						<section style="text-align: left;">
+							<ul>
+								<li><b>ssh</b></li>
+								<li><b>http</b>[s]</li>
+								<li><b>git</b> (protocolo utilizado para softwares open source)</li>
+								<li><b>local file</b></li>
+							</ul>
+						</section>
+					</p>
+					<p>
+						<section style="text-align: center;">
+							Um <b>remote</b> é um alias que se refere a uma URL de um repositório específico. Ao clonar um repositório, um remote chamado <b>origin</b> é automaticamente criado, que se referencia ao repositório clonado.
+							<br>
+							<code style="font-size: 17px;">
+								git remote show origin
+							</code>
+						</section>
+					</p>
+				</section>
+
+				<section>
+					<h3>Criando um novo repositório</h3>
+					<section>
+						<br>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<section style="text-align: center; vertical-align:middle">
+											<code style="font-size: 17px;">git init
+												<br>
+												git add <i>&lt;filename&gt;</i>
+												<br>
+												git add -u *
+												<br>
+												git commit -m "Commit message"
+												<br>
+												git status
+											</code>
+										</section>
+									</td>
+									<td>
+										<p>
+											<img style="vertical-align:middle; background:none; border:none; box-shadow:none;" src=http://i286.photobucket.com/albums/ll104/SophiaRodopoulos/staging_index.png>
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<br>
+						<text align=left>
+							<small><b>OBS:</b> O comando <b>-u</b> permite que o git veja a sua branch atual como referência ao utilizar futuras operações.</small>
+						</text>
+					</section>
+				</section>
+
+				<section>
+					<h3>
+						Lifecycle de um arquivo
+					</h3>
+					<p>
+						<img style="vertical-align:middle; background:none; border:none; box-shadow:none;" src=http://i286.photobucket.com/albums/ll104/SophiaRodopoulos/file_lifecycle.png>
+					</p>
+				</section>
+
+				<section>
+					<p>
+						Adicionando um projeto existente a uma URL
+					</p>
+					<code style="font-size: 17px;">
+						git remote add origin <i>&lt;remote repository URL&gt;</i>
+						<br>
+						git push origin master
+					</code>
+
+					<p>
+						...ou você pode clonar um repositório já existente
+					</p>
+					<code style="font-size: 17px;">
+						git clone <i>&lt;remote repository URL&gt;</i>
+					</code>
+				</section>
+
+				<section>
+					<h3>
+						Worflow básico de um projeto
+					</h3>
+					<code style="font-size: 17px;">
+						git add <i>&lt;filename&gt;</i>
+						<br>
+						git commit -m "Fixed burritos bug"
+						<br>
+						git pull origin
+						<br>
+						git push origin <i>&lt;branch name&gt;</i>
+					</code>
+				</section>
+
+				<section>
+					<img style="vertical-align:middle; background:none; border:none; box-shadow:none;" src=http://i.imgur.com/0blLD7H.jpg>
+				</section>
+
+				<section>
+					<h2>Merge conflicts</h2>
+					<section style="text-align: left;">
+						<p>
+							Ocorre ao realizar merge em duas branches, ambas com arquivos modificados na mesma região.
+						</p>
+						<p>
+							<b>Evite arquivos binários.</b>
+						</p>
+					</section>
+					<section style="text-align: left; vertical-align:middle;">
+						<p>
+							Utilizar <b>.gitignore</b> para não adicionar arquivos indesejados no repositório.
+						</p>
+						<pre class="bash" style="align: center;">
+							<code>/nameOfFolderToIgnore/
+
+# autogenerated files
+*.userprefs
+*.csproj
+*.unityproj
+
+# generated meta files
+*.pidb.meta
+
+ignoreThisSpecificFile.txt</code>
+						</pre>
+					</section>
+				</section>
+
+				
+				<section style="text-align: left;">
+					Após um merge conflict, o git gerará um arquivo em um formato similar a esse:
+					<pre class="bash" style="align: center;">
+						<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Ed likes to eat glue.
+=======
+Ed likes to eat cupcakes.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; branchNameHere</code>
+					</pre>
+					Para resolver o conflito, decida qual bloco de texto deve permanecer (ou crie uma nova solução) e remova as áreas de marcação. Salve o arquivo e faça outro commit, voilà!
+					<pre class="bash" style="align: center;">
+						<code>Ed likes to eat glue.</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>What now?</h3>
+					<section style="text-align: left;">
+						<p>
+							Há várias formas de usar o git: via linha de comando e via versões GUI, como <a href=https://www.sourcetreeapp.com/>SourceTree</a> (Windows/Mac) e <b>gitk</b> (built-in GUI para Linux). Simples e fácil, basta verificar a instalação adequada para a <a href=https://git-scm.com/downloads>sua plataforma</a>.
+						</p>
+						<p>
+							Ter uma conta em um serviço online de hospedagem para repositórios git, aka <i>repository hosting service</i>.<br>Exemplos: <b>GitHub</b>, <b>Bitbucket</b> e <b>GitLab</b>.
+						</p>
+						<p>
+							Documentação simpática: <a href=https://git-scm.com/doc>git Doc</a>.
+						</p>
+					</section>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
