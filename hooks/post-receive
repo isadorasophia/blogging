@@ -8,6 +8,6 @@ MY_DOMAIN=isadorasophia.com
 
 set -e
 
-$HOME/work/bin/hugo -s $WORKING_DIRECTORY -d $PUBLIC_WWW -b "http://${MY_DOMAIN}"
+$HOME/work/bin/hugo -s $WORKING_DIRECTORY -d $PUBLIC_WWW -b "http://${MY_DOMAIN}" --buildDrafts
 
 trap - EXIT

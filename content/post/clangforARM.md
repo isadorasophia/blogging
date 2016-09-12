@@ -41,7 +41,7 @@ After some more extensive search thourgh the brave LLVM [documentation], I proce
 
     clang++ -target armv7-none-linux-gnueabihf toy.cpp -o toy
 
-The target that I used was a triplet described in the LLVM documentation. Ok! But things weren't done yet. I still had to compile my project using IOmp, Intel OpenMP runtime. I cloned the repository and proceeded with CMake, once again.
+The target that I used was a triplet described in the LLVM documentation. Ok! But things weren't done yet. I still had to compile my project using IOmp, Intel OpenMP run-time library. I cloned the repository and proceeded with CMake, once again.
 
     mkdir build && cd build
 
@@ -54,14 +54,14 @@ What it turns out is that the CMake was basically ignoring the "CMAKE_C_COMPILER
     export C=arm-linux-gnueabihf-gcc
     export CXX=arm-linux-gnueabihf-g++
 
-I was successfully able to compile the runtime. With everything set, I was able to compile my program with some more instructions:
+I was able to successfully compile the runtime. With everything set, I needed some more instructions to build my program, in order to link with the Intel run-time library:
     
     export OMP_INTEL=path/to/build/dir/src
 
     export LIBRARY_PATH=$OMP_INTEL:$LIBRARY_PATH
     export LD_LIBRARY_PATH=$OMP_INTEL:$LD_LIBRARY_PATH
 
-And then, compile it:
+And then, I finally built it as:
 
     clang++ -target armv7-none-linux-gnueabihf -L$OMP_INTEL -fopenmp toy.cpp -o toy
 
